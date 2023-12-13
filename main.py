@@ -8,7 +8,7 @@ import pyttsx3
 start = Tk()
 engine = pyttsx3.init()
 voices = engine.getProperty("voices")
-engine.setProperty('voice', voices[2].id)
+engine.setProperty('voice', voices[1].id)
 text_val = "Welcome to JKJ Mini-Games"
 rate = engine.getProperty("rate")
 engine.setProperty("rate", 180)
@@ -336,7 +336,7 @@ def shapes():
     root.title("Shape Drawer")
 
     # Create a frame for the inputs and buttons
-    input_frame = ttk.LabelFrame(root, text="Shape Drawer")
+    input_frame = ttk.LabelFrame(root, text="Shape Drawer (Selected shape shown in output window)")
     input_frame.grid(row=0, column=0, padx=10, pady=15, sticky="w")
 
     # Length input
@@ -350,7 +350,7 @@ def shapes():
     shape_var.set("Circle")
     shape_label = ttk.Label(input_frame, text="Select Shape:")
     shape_label.grid(row=1, column=0, padx=5)
-    shape_option_menu = tk.OptionMenu(input_frame, shape_var, "Circle", "Square", "Triangle")
+    shape_option_menu = tk.OptionMenu(input_frame, shape_var, "Default - Circle", "Circle", "Square", "Triangle")
     shape_option_menu.grid(row=1, column=1, padx=5)
 
     # Draw button
@@ -378,7 +378,7 @@ def shapes():
 
 start.geometry('1050x500')
 start.title('JKJ MINI GAMES')
-start.configure(background='light grey')
+start.configure(background='green')
 f = ("Times bold", 14)
 
 
