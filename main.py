@@ -4,7 +4,6 @@ from tkinter import *
 import random as ran
 from tkinter import ttk
 import pyttsx3
-import time
 
 start = Tk()
 engine = pyttsx3.init()
@@ -96,6 +95,7 @@ def paint():
     tk.Button(root, text='Back', command=goback).pack()
     PaintApp(root)
     root.mainloop()
+
 
 class GuessTheNumber:
     def __init__(self, master):
@@ -311,6 +311,7 @@ def shapes():
     def draw_shape():
         length = float(length_entry.get())
         shape = shape_var.get()
+        print("Shape Chosen: - ", shape)
 
         # Clear the canvas
         turtle.reset()
@@ -349,7 +350,7 @@ def shapes():
     shape_var.set("Circle")
     shape_label = ttk.Label(input_frame, text="Select Shape:")
     shape_label.grid(row=1, column=0, padx=5)
-    shape_option_menu = ttk.OptionMenu(input_frame, shape_var, "Circle", "Circle", "Square", "Triangle")
+    shape_option_menu = tk.OptionMenu(input_frame, shape_var, "Circle", "Square", "Triangle")
     shape_option_menu.grid(row=1, column=1, padx=5)
 
     # Draw button
@@ -466,7 +467,7 @@ Button(
     start,
     image=photo_image5,
     compound=LEFT,
-    text="End Minigames",
+    text="End Mini-games",
     font=f,
     fg="red",
     height=75,
